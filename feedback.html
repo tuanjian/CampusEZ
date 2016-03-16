@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问题反馈</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/user/feedback.css"rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="scripts/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container">
+        <form id="feedback-form" class="form-horizontal col-md-offset-2 col-md-7" role="form"method="post" action="#">
+            <div class="form-group">
+                <label for="schoolName" class="control-label col-md-2">学校</label>
+                <div class="col-md-10">
+                    <input id="schoolName" class="form-control" type="text" placeholder="选择学校" >
+                     <div id="proSchool" class="panel panel-primary">
+                         <div class="panel-heading">
+                            <span>请选择</span>
+                         </div>
+                         <div class="panel-body">
+                             <div id="proSelect" class="col-md-12">
+                                 <select class="col-md-4"></select>
+                                 <span class="col-md-8">如没找到选择项，请选择其他手动填写</span>
+                                 <input type="text">
+                             </div>
+                             <div id="schoolList" class="col-md-12">
+                                 <ul>
+                                 </ul>
+                             </div>
+                         </div>
+                         <div class="panel-footer">
+                                 <a id="btnOk" class="btn btn-sm btn-info col-md-offset-7 col-md-2">确定</a>
+                                 <a id="btnCancel" class="btn btn-sm btn-info  col-md-offset-1 col-md-2">取消</a>
+                         </div>
+                     </div>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">学号</label>
+                <div class="col-md-10">
+                    <input class="form-control" type="text" placeholder="学号">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-offset-1">反馈内容</label>
+                <textarea class="form-control col-md-offset-1" rows="6" placeholder="感谢您的反馈"></textarea>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-6 col-md-2">
+                    <button type="submit" class="btn btn-default">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+<script src="js/jquery-2.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/user/feedback.js"></script>
+</body>
+</html>

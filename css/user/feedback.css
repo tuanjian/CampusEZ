@@ -1,0 +1,21 @@
+form{
+    margin-top: 5%;
+}
+body{ padding:20px;font:12px "微软雅黑";background:#FFF;}
+ul li{ list-style:none;}
+#proSchool{
+    display: none;
+    position: absolute;
+    height: 400px;
+    z-index: 1;
+}
+#schoolList{
+    margin:5px;
+    height: 250px;
+    overflow-y:auto;
+}
+/*#btnOk,#btnCancel{*/
+    /*margin-bottom: 10px;*/
+/*}*/
+#proSelect input { display:none;}
+#schoolList ul li:hover { background:#72B9D7;}

@@ -1,0 +1,87 @@
+    html {overflow-y: scroll}
+    body {color: #222;padding: 0}
+    
+	html,body {height:100%}
+	
+    /* fix for inputs inline shadow */
+		input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+		}
+    /* no borders for buttons (ie7) */
+		button {*border: none !important;*border-color: transparent !important}
+		
+		a,button,input {outline:none !important}
+
+	/* webkit extra margin fix */
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			button {margin: 0px}
+		}
+    
+	/* main headings*/
+		.heading {border-bottom: 1px solid #dcdcdc;margin-bottom: 18px;padding-bottom: 5px}
+		.heading h1,.heading h2,.heading h3,h1.heading,h2.heading,h3.heading,.modal-header h3 {font-family: 'PT Sans', sans-serif;font-weight:400}
+		.heading .btn {vertical-align:bottom;margin-left:10px}
+    
+	/* fix for .label position */
+		h1 + .label {margin:13px 10px 0 0}
+		h2 + .label {margin:12px 10px 0 0}
+		h3 + .label {margin:7px 10px 0 0}
+
+    /* element separation */
+		.sepH_a {margin-bottom:5px}.sepH_b {margin-bottom:10px}.sepH_c {margin-bottom:20px}
+		.sepV_a {margin-right:5px}.sepV_b {margin-right:10px}.sepV_c {margin-right:20px}
+		.sepH_a_line {padding-bottom:6px;margin-bottom:18px;border-bottom:1px solid #dcdcdc}
+		.sepH_no {margin-bottom:0}
+	
+		.tac {text-align:center}
+		.line_sep {border-bottom: 1px solid #dcdcdc;margin-bottom: 18px;padding-bottom: 5px}
+		.sml_t {font-size:11px}
+		.sml {font-size:11px;color:#9d9d9d}
+    
+		#colorbox ~ .bootstrap-timepicker,#colorbox ~ .colorpicker,#colorbox ~ .datepicker {z-index:10000}
+		textarea, input {outline: none}
+
+		tr.rowlink td {cursor:pointer}
+		tr.rowlink td.nolink {cursor:auto}
+		.table tbody tr.rowlink:hover td {background-color: #efefef}
+		a.rowlink {font: inherit;color: inherit;text-decoration: inherit}
+
+
+    /* file upload */
+        .btn.btn-file{overflow:hidden;position:relative;vertical-align:middle}
+        .btn.btn-file > input[type=file]{width:100%;position:absolute;left:0;top:0;opacity:0;cursor:pointer}
+        .fileupload{margin-bottom:9px}
+        .fileupload .uneditable-input{display:inline-block;margin-bottom:0;vertical-align:middle;height:28px !important;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box}
+        .fileupload .thumbnail{overflow:hidden;display:inline-block;margin-bottom:5px;vertical-align:middle;text-align:center}
+        .fileupload .thumbnail > img{display:block;vertical-align:middle;max-height:100%}
+        .fileupload .btn{vertical-align:middle}
+        .fileupload-exists .fileupload-new,.fileupload-new .fileupload-exists{display:none}
+        .fileupload-inline .fileupload-controls{display:inline}
+        .fileupload-new .input-append .btn-file{-webkit-border-radius:0 3px 3px 0;-moz-border-radius:0 3px 3px 0;border-radius:0 3px 3px 0}
+        .fileupload .fileupload-preview {vertical-align:middle}
+        .fileupload .close.fileupload-exists {vertical-align:middle}
+
+
+	/* rowlink plugin */
+		[data-rowlink] td, td[data-rowlink],[data-msg_rowlink] td, td[data-msg_rowlink] {cursor: pointer}
+		[data-rowlink] td.nohref, td.nohref[data-rowlink], [data-msg_rowlink] td.nohref, td.nohref[data-msg_rowlink] {cursor:default}
+	/* file manager */
+        #kcfinder_iframe {height:500px;margin-bottom:30px;border:1px solid #adaba9}
+	/* mailbox */
+		.mbox .heading {padding-bottom:0}
+		.mbox .heading .nav-tabs {margin-bottom:0;border-bottom:none}
+		.mbox .dataTables_wrapper .row {-webkit-box-shadow: inset 0px 1px 0px 0px #fefefe;box-shadow: inset 0px 1px 0px 0px #fefefe;margin:0;padding-bottom:10px;padding:8px 5px;border-width:1px 0;border-style:solid;border-color:#ddd;background:#f3f3f3}
+		.mbox .dataTables_wrapper .row label {margin-bottom:0;line-height:28px}
+		.mbox .dataTables_wrapper .row div.dataTables_info {padding-top:0;line-height:26px;color:#404040}
+		.dataTables_wrapper table.mbox_table {margin:0 !important}
+		.mbox_table tbody {color:#404040}
+		.mbox_table .select_msg {margin-top:-2px;position:relative}
+		.mbox_table .rowChecked td {background:#fffeed}
+		.mbox .unread {font-weight:700}
+		.js .mbox_star {display:none}
+		.mbox_star {visibility:hidden;cursor:pointer}
+		.mbox_star.splashy-star_full {visibility:visible}
+		.mbox .pagination a {background:#fff}
+		.mbox .pagination .disabled span, .pagination .disabled a, .pagination .disabled a:hover {background: transparent}
+		.mbox .pagination .active a {background:#f5f5f5}

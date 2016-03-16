@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>管理员登录</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/user/login.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <section>
+            <div class="col-lg-6 col-lg-offset-3">
+                <div id="formPanel" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">登录</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form id="defaultForm" method="post" class="form-horizontal" action="login.jsp">
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label">用户名</label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="username" placeholder="手机号码"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label">密码</label>
+                                <div class="col-lg-6">
+                                    <input type="password" class="form-control" name="password" placeholder="密码"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" id="captchaOperation"></label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" name="captcha"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-7 col-lg-offset-5">
+                                    <button type="submit" class="btn btn-primary btn-lg" name="signIn" value="Sign in">登录</button>
+                                </div>
+                                <div class="col-md-offset-9 col-md-3">
+                                    <p class="recover-account"> <a href="#modal-recover" data-toggle="modal">忘记密码
+                                    </a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <ul class="list-inline text-center">
+                        <li>
+                        <a href="javascript:void(0);" class="btn btn-success btn-circle"><i class="fa fa-wechat"></i></a>
+                        </li>
+                        <li>
+                        <a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-qq"></i></a>
+                        </li>
+                        <li>
+                        <a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-weibo"></i></a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-recover" class="modal" tabindex="-1" role="dialog" aria-labelledby="modal-recoverLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h3 id="modal-recoverLabel">重置密码</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form id="form-recover" class="form-horizontal" method="post"/>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">邮箱</label>
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" name="email"/>
+                                    </div>
+                                    <p class="col-md-offset-2 col-md-8 help-block helper-font-small">输入您的邮箱地址，以便我们发给你重置密码的链接.</p>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+                            <input type="submit" form="form-recover" class="btn btn-primary" value="发送"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="js/jquery-2.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrapValidator.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Generate a simple captcha
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+        $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+
+        $('#defaultForm').bootstrapValidator({
+//        live: 'disabled',
+            message: '无效',
+            feedbackIcons: {
+                valid: 'fa fa-ok',
+                invalid: 'fa fa-remove',
+                validating: 'fa fa-refresh'
+            },
+            fields: {
+                username: {
+                    message: '用户名无效',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能位空'
+                        },
+                        regexp: {
+                            regexp:/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/,
+                            message: '手机号码不合法'
+                        },
+                        remote: {
+                            url: '#',
+                            message: '未找到此用户'
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '密码不能为空'
+                        },
+                        remote: {
+                            url: '#',
+                            message: '密码不正确'
+                        },
+                    }
+                },
+                captcha: {
+                    validators: {
+                        callback: {
+                            message: '答案错误',
+                            callback: function (value, validator) {
+                                var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                                return value == sum;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        $('#form-recover').bootstrapValidator({
+            message: '无效',
+            feedbackIcons: {
+                valid: 'fa fa-ok',
+                invalid: 'fa fa-remove',
+                validating: 'fa fa-refresh'
+            },
+            fields: {
+                email: {
+                    validators: {
+                        emailAddress: {
+                            message: '请检查邮箱格式'
+                        }
+                    }
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

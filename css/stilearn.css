@@ -1,0 +1,148 @@
+
+/* content */
+.content{
+    display: block;
+    background: #EDEDED url('../images/bg-content.jpg');
+    border: 1px solid #CDCDCD;
+    border-left: none;
+    padding-bottom: 0px;
+    min-height: 580px;
+}
+/* content-header */
+.content > .content-header{
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid #CDCDCD;
+    background: #E9E9E9 url('../images/bg-content-header.png');
+    color: #626262;
+}
+
+.content > .content-header > ul.content-header-action{
+    display: block;
+    list-style: none;
+    margin: 0px; padding: 0px;
+}
+
+.content > .content-header > ul.content-header-action li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 10px 0px 0px;
+    padding: 0px;
+    float: left;
+}
+.content > .content-header > ul.content-header-action li:hover .badge-circle{
+    opacity: 1;
+}
+
+.content > .content-header > ul.content-header-action li.divider{
+    height: 40px;
+    border-right: 1px solid #CDCDCD;
+}
+
+.content > .content-header > ul.content-header-action li .badge-circle{
+    width: 40px;
+    height: 31px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+    margin-top: -10px;
+    padding: 0px;
+    padding-top: 9px;
+}
+.content > .content-header > ul.content-header-action li .action-text{
+    display: inline-block;
+    font-weight: bold;
+}
+.content > .content-header > ul.content-header-action li .action-text span{
+    display: block;
+    font-weight: normal;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.content > .content-header h1,
+.content > .content-header h2,
+.content > .content-header h3,
+.content > .content-header h4,
+.content > .content-header h5,
+.content > .content-header h6{
+    font-size: 1.2em;
+    margin: 0px;
+}
+
+.content > .content-header h1 > i:first-child,
+.content > .content-header h2 > i:first-child,
+.content > .content-header h3 > i:first-child,
+.content > .content-header h4 > i:first-child,
+.content > .content-header h5 > i:first-child,
+.content > .content-header h6 > i:first-child{
+    margin-right: 5px;
+}
+.content > .content-header h1 > small,
+.content > .content-header h2 > small,
+.content > .content-header h3 > small,
+.content > .content-header h4 > small,
+.content > .content-header h5 > small,
+.content > .content-header h6 > small{
+    font-size: .8em;
+    font-weight: normal;
+}
+
+/* end content-header */
+
+/* content-breadcrumb */
+.content-breadcrumb, 
+.content-breadcrumb > .breadcrumb-nav,
+.content-breadcrumb > .breadcrumb-nav > li{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.content-breadcrumb > .breadcrumb{
+    background: #FFFFFF url('../images/noise.png');
+    font-size: .8em;
+    margin: 0px;
+    border-bottom: 1px solid #CDCDCD;
+    -webkit-border-radius: 0px;
+     -moz-border-radius: 0px;
+          border-radius: 0px;
+}
+.content-breadcrumb > .breadcrumb a{
+    color: #626262;
+}
+
+.content-breadcrumb > .breadcrumb-nav > li{
+    float: left;
+}
+
+.content-breadcrumb > .breadcrumb-nav.pull-right > li.divider{
+    height: 38px;
+    margin: -8px 5px;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #CDCDCD;
+}
+.content-breadcrumb > .breadcrumb-nav.pull-right > li > a{
+    font-size: 10px;
+}
+
+.content-breadcrumb > .breadcrumb-nav.pull-right > li > a{
+    color: #626262;
+}
+.content-breadcrumb > .breadcrumb-nav.pull-right > li > a:hover{
+    text-decoration: none
+}
+
+.content-breadcrumb > .breadcrumb-nav.pull-right{
+    padding: 8px 15px;
+}
+/* end content-breadcrumb */
+
+/* content-body */
+.content > .content-body{
+    padding: 40px 20px 40px 20px;
+    font-size: .9em;
+    background: #FFFFFF url('../images/noise.png');
+}

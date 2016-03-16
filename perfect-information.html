@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>信息完善</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/user/global.css">
+    <link rel="stylesheet" href="css/user/navigator.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="header">
+        <nav class=" navbar navbar-default navbar-fixed-top" id="top-navbar" role="navigation">
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Campus" class="img-responsive" height="30" width="120">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="dropdown user" id="header-user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img alt="" src="images/avatar3.jpg"/>
+                            <span class="username">辅导员</span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-user"></i>用户信息</a></li>
+                            <li><a href="#"><i class="fa fa-comment"></i>消息</a></li>
+                            <li><a href="#"><i class="fa fa-eye"></i>预留</a></li>
+                            <li><a href="login.html"><i class="fa fa-power-off"></i>注销</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="main row">
+        <div class="left-part col-lg-2">
+            <nav class="left-nav navbar-left col-md-12 " role="navigation">
+                <a href="#base" class="nav-header menu-first collapse navbar-collapse" data-toggle="collapse"><i
+                        class="fa fa-user"></i>&nbsp;个人信息</a>
+                <ul class="nav nav-list collapse menu-second in" id="base">
+                    <li role="presentation"><a href="perfect-information.html"><i class="fa fa-edit"></i>&nbsp;完善信息</a>
+                    </li>
+                    <li role="presentation"><a href="change-password.html"><i class="fa fa-key"></i>&nbsp;修改密码</a></li>
+                </ul>
+                <a href="#message" class="nav-header menu-first collapse navbar-collapse" data-toggle="collapse">
+                    <i class="fa fa-comment"></i>&nbsp;消息通知
+                </a>
+                <ul class="nav nav-list collapse menu-second in " id="message">
+                    <li role="presentation"><a href="message.html"><i class="fa fa-comments"></i>&nbsp;临时会话</a></li>
+                    <li role="presentation"><a href="email.html"><i class="fa fa-envelope"></i>&nbsp;邮件系统</a></li>
+                </ul>
+                <a href="#manage" class="nav-header menu-first collapse navbar-collapse" data-toggle="collapse">
+                    <i class="fa fa-wrench"></i>&nbsp;操作管理
+                </a>
+                <ul class="nav nav-list collapse menu-second in " id="manage">
+                    <li><a href="record-in.html"><i class="fa fa-pencil"></i>&nbsp;信息录入</a></li>
+                    <li><a href="file-upload.html"><i class="fa fa-upload"></i>&nbsp;文件上传</a></li>
+                    <li><a href="activity-create.html"><i class="fa fa-plus"></i>&nbsp;活动创建</a></li>
+                    <li><a href="activity-check.html"><i class="fa fa-paperclip"></i>&nbsp;活动审批</a></li>
+                </ul>
+                <a href="#data" class="nav-header menu-first collapse navbar-collapse" data-toggle="collapse"><i
+                        class="fa fa-bar-chart"></i>&nbsp;数据分析</a>
+                <ul class="nav nav-list collapse menu-second in " id="data">
+                    <li><a href="data-chart.html"><i class="fa fa-pie-chart"></i>&nbsp;数据统计</a></li>
+                    <li><a href="data-table.html"><i class="fa fa-table"></i>&nbsp;数据报表</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>&nbsp;预留</a></li>
+                </ul>
+                <a href="#reserve" class="nav-header menu-first collapse navbar-collapse" data-toggle="collapse"><i
+                        class="icon-book icon-large"></i>&nbsp;预留</a>
+                <ul class="nav nav-list collapse menu-second " id="reserve">
+                    <li><a href="#"><i class="fa fa-pencil"></i>&nbsp;one</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>&nbsp;two</a></li>
+                    <li><a href="#"><i class="fa fa-pencil"></i>&nbsp;>three</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="col-md-offset-2 domain-part col-lg-8">
+            <section>
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="page-header">
+                        <h3>信息完善</h3>
+                    </div>
+
+                    <form id="defaultForm" method="post" class="form-horizontal" action="user/perfectInfo">
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">姓名</label>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="firstName" required data-bv-trigger="keyup" data-bv-notempty-message="姓名不能为空" placeholder="姓" />
+                            </div>
+                            <div class="col-lg-4">
+                                <input type="text" class="form-control" name="lastName" required data-bv-trigger="blur" data-bv-notempty-message="姓名不能为空" placeholder="名" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">用户名</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="username" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">邮箱</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="email" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">性别</label>
+                            <div class="col-lg-5">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="0" /> 男
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="1" /> 女
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="gender" value="2" /> 保密
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">生日</label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="birthday" /> (YYYY/MM/DD)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">选择语言</label>
+                            <div class="col-lg-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="english" /> English
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="french" /> French
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="german" /> German
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="russian" /> Russian
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="languages[]" value="other" /> Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">选择程序设计语言</label>
+                            <div class="col-lg-5">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="net" /> .Net
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="java" /> Java
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="c" /> C/C++
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="php" /> PHP
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="perl" /> Perl
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="ruby" /> Ruby
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="python" /> Python
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="programs[]" value="javascript" /> Javascript
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label" id="captchaOperation"></label>
+                            <div class="col-lg-2">
+                                <input type="text" class="form-control" name="captcha" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="submit" class="btn btn-primary" name="signup" value="保存">Sign up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- :form -->
+        </div>
+        <div class="right-part col-lg-2"></div>
+    </div>
+    <div class="footer"></div>
+</div>
+
+<script src="js/jquery-2.2.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrapValidator.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        // Generate a simple captcha
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+        $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+
+        $('#defaultForm').bootstrapValidator({
+//        live: 'disabled',
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                /*
+                 firstName: {
+                 validators: {
+                 notEmpty: {
+                 message: '姓名不能为空'
+                 }
+                 }
+                 },
+                 lastName: {
+                 validators: {
+                 notEmpty: {
+                 message: '姓名不能为空'
+                 }
+                 }
+                 },
+                 */
+                username: {
+                    message: '用户名无效',
+                    validators: {
+                        notEmpty: {
+                            message: '用户名不能位空'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: '用户名必须大于6，小于30个字'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_\.]+$/,
+                            message: '用户名只能由字母、数字、点和下划线组成'
+                        },
+                        remote: {
+                            url: '#',
+                            message: '用户名不可用'
+                        },
+                        different: {
+                            field: 'password',
+                            message: '用户名和密码不能相同'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+                        emailAddress: {
+                            message: '输入不是有效的电子邮件地址'
+                        }
+                    }
+                },
+//                password: {
+//                    validators: {
+//                        notEmpty: {
+//                            message: '密码不能位空'
+//                        },
+//                        identical: {
+//                            field: 'confirmPassword',
+//                            message: '两次密码不一致'
+//                        },
+//                        different: {
+//                            field: 'username',
+//                            message: '用户名和密码不能相同'
+//                        }
+//                    }
+//                },
+//                confirmPassword: {
+//                    validators: {
+//                        notEmpty: {
+//                            message: '密码不能为空'
+//                        },
+//                        identical: {
+//                            field: 'password',
+//                            message: '两次密码不一致'
+//                        },
+//                        different: {
+//                            field: 'username',
+//                            message: '用户名和密码不能相同'
+//                        }
+//                    }
+//                },
+                birthday: {
+                    validators: {
+                        date: {
+                            format: 'YYYY/MM/DD',
+                            message: '不是合法的生日'
+                        }
+                    }
+                },
+                gender: {
+                    validators: {
+                        notEmpty: {
+                            message: '请选择性别'
+                        }
+                    }
+                },
+                'languages[]': {
+                    validators: {
+                        notEmpty: {
+                            message: '请至少选择一种语言'
+                        }
+                    }
+                },
+                'programs[]': {
+                    validators: {
+                        choice: {
+                            min: 2,
+                            max: 4,
+                            message: '请选择两种到四种语言'
+                        }
+                    }
+                },
+                captcha: {
+                    validators: {
+                        callback: {
+                            message: '答案错误',
+                            callback: function(value, validator) {
+                                var items = $('#captchaOperation').html().split(' '), sum = parseInt(items[0]) + parseInt(items[2]);
+                                return value == sum;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Validate the form manually
+        $('#validateBtn').click(function() {
+            $('#defaultForm').bootstrapValidator('validate');
+        });
+
+        $('#resetBtn').click(function() {
+            $('#defaultForm').data('bootstrapValidator').resetForm(true);
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* content-header */
+.content > .content-header{
+    padding: 10px 20px 10px 20px;
+    border-bottom: 1px solid #CDCDCD;
+    background: #E9E9E9 url('../../images/bg-content-header.png');
+    color: #626262;
+}
+
+.content > .content-header > ul.content-header-action{
+    display: block;
+    list-style: none;
+    margin: 0px; padding: 0px;
+}
+
+.content > .content-header > ul.content-header-action li{
+    display: inline-block;
+    list-style: none;
+    margin: 0px 10px 0px 0px;
+    padding: 0px;
+    float: left;
+}
+.content > .content-header > ul.content-header-action li:hover .badge-circle{
+    opacity: 1;
+}
+
+.content > .content-header > ul.content-header-action li.divider{
+    height: 40px;
+    border-right: 1px solid #CDCDCD;
+}
+
+.content > .content-header > ul.content-header-action li .badge-circle{
+    width: 40px;
+    height: 31px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+    margin-top: -10px;
+    padding: 0px;
+    padding-top: 9px;
+}
+.content > .content-header > ul.content-header-action li .action-text{
+    display: inline-block;
+    font-weight: bold;
+}
+.content > .content-header > ul.content-header-action li .action-text span{
+    display: block;
+    font-weight: normal;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.content > .content-header h1,
+.content > .content-header h2,
+.content > .content-header h3,
+.content > .content-header h4,
+.content > .content-header h5,
+.content > .content-header h6{
+    font-size: 1.2em;
+    margin: 0px;
+}
+
+.content > .content-header h1 > i:first-child,
+.content > .content-header h2 > i:first-child,
+.content > .content-header h3 > i:first-child,
+.content > .content-header h4 > i:first-child,
+.content > .content-header h5 > i:first-child,
+.content > .content-header h6 > i:first-child{
+    margin-right: 5px;
+}
+.content > .content-header h1 > small,
+.content > .content-header h2 > small,
+.content > .content-header h3 > small,
+.content > .content-header h4 > small,
+.content > .content-header h5 > small,
+.content > .content-header h6 > small{
+    font-size: .8em;
+    font-weight: normal;
+}
+
+/* end content-header */
