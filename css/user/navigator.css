@@ -2,6 +2,7 @@
     background: #333333 url('../../images/top-nav-bar.jpg');
 }
 .left-part{
+    margin-left: -1.0%;
     position: fixed;
     padding-right: 0px;
     padding-left: 0px;

@@ -4,8 +4,6 @@
 /* [ ---- Gebo Admin Panel - mailbox ---- ] */
 
 $(document).ready(function() {
-    //* make row clickable
-    mailbox.msg_rowLink();
 
     //* new message
     mailbox.new_message();
@@ -41,7 +39,15 @@ mailbox = {
             },
             "lengthMenu":[[5,10,25,50,-1],[5,10,25,50,"全部"]],
             "sPaginationtype":"full_numbers",
-            "ajax": "data/emails.txt",
+            "ajax": {
+                url: "data/emails.txt",
+                dataSrc: function ( json ) {
+                    //for ( var i=0, ien=json.data.length ; i<ien ; i++ ) {
+                    //    json.data[i][0] = '<a href="/message/'+json.data[i][0]+'>View message</a>';
+                    //}
+                    return json.data;
+                }
+            },
             "autoWidth": true,
             "deferRender": true,
             "aoColumnDefs":[
@@ -121,14 +127,16 @@ mailbox = {
             "ajax": "data/emails.txt",
             "autoWidth": true,
             "deferRender": true,
-            "columnDefs": [ {
-                "targets": 0,
-                "data": null,
-                "defaultContent": "<input type='checkbox' name='msg_sel'class='select_msg'/>"
-            } ],
+            "columnDefs": [
+                {
+                    "targets": 0,
+                    "data": null,
+                    "defaultContent": "<input type='checkbox' name='msg_sel'class='select_msg'/>"
+                }
+            ],
             columns: [
                 { "bSortable": false, 'sWidth': '16px' },
-                { "data": "subject" },
+                { "data": "subject"},
                 { "data": "sender" },
                 { "data": "date" },
                 { "data": "size" }
@@ -169,7 +177,7 @@ mailbox = {
                 $(this).closest('tr').removeClass('rowChecked')
             }
         });
-        $("#dt_inbox_actions").on('click', '.delete_msg', function (e) {
+        $("#dt_inbox_actions，#dt_outbox_actions,#dt_trash_actions").on('click', '.delete_msg', function (e) {
             e.preventDefault();
             var tableid = $(this).data('tableid'),
                 oTable = $('#'+tableid).dataTable();
@@ -202,27 +210,36 @@ mailbox = {
                 $.sticky("请选择要删除的邮件", {autoclose : 5000,position: "top-center", type: "st-info" });
             }
         });
+        $('.table tbody').on('click','tr',function(){
+            var sender=$('td', this).eq(2).text();
+            var date=$('td', this).eq(3).text();
+            //$.ajax({
+            //    url: 'email/findEmail,
+            //data:{
+            //    sender : sender,
+            //    date : date,
+            //},
+            //    type: 'post',
+            //    cache: false,
+            //    dataType: 'json',
+            //    success: function (data) {
+            //        //*TODO:
+            //        //设置#msg_view 内容
+            //        $("#msg_view").show();
+            //        $('.nav-tabs > .active').removeClass('active');
+            //        $('.tab-content> .active').removeClass('active');
+            //    },
+            //    error: function () {
+            //        alert("加载数据异常！");
+            //    }
+            //});
+            $('td', this).eq(3).text();
+            $("#msg_view").show();
+            $('.nav-tabs > .active').removeClass('active');
+            $('.tab-content> .active').removeClass('active');
+        })
     },
-    msg_rowLink: function() {
-        //$('*[data-msg_rowlink]').each(function () {
-        //    var target = $(this).attr('data-msg_rowlink');
-        //
-        //    (this.nodeName == 'tr' ? $(this) : $(this).find('tr:has(td)')).each(function() {
-        //        var link = $(this).find(target).first();
-        //        if (!link.length) return;
-        //
-        //        var href = link.attr('href');
-        //
-        //        $(this).find('td').not('.nohref').click(function() {
-        //            //* coment $(link).tab('show') and uncoment window.location = href to open message in new window
-        //            //window.location = href;
-        //            $(link).tab('show');
-        //            $('.mbox .nav-tabs > .active').removeClass('active');
-        //        });
-        //        link.replaceWith(link.html());
-        //    });
-        //});
-    },
+
     new_message: function() {
         ////* recipients
         //$("#mail_recipients").tagHandler({

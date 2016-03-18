@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/user/global.css">
     <link rel="stylesheet" href="css/user/navigator.css">
+    <link rel="stylesheet" href="css/user/file-upload.css">
     <link rel="stylesheet" href="lib/fileinput/css/default.css">
     <link rel="stylesheet" href="lib/fileinput/css/fileinput.min.css">
 </head>
@@ -82,21 +83,51 @@
             </nav>
         </div>
         <div class="col-lg-offset-2 col-lg-9 domain-part">
-            <h3>图片上传<small>[格式:jsp、png、gif][单个大小:<5M]</small></h3>
-            <div class="form-group">
-                <input id="file-pictures" class="file" type="file" multiple data-preview-file-type="image">
-            </div>
-            <h3>视频上传<small>[格式：][大小:<20M]</small></h3>
-            <div class="form-group">
-                <input id="file-videos" class="file" type="file" multiple data-preview-file-type="video">
-            </div>
-            <h3>音频上传<small>[格式：][单个大小:<10M]</small></h3>
-            <div class="form-group">
-                <input id="file-audios" class="file" type="file" multiple data-preview-file-type="audio">
-            </div>
-            <h3>文档上传<small>[格式：][单个大小:<5M]</small></h3>
-            <div class="form-group">
-                <input id="file-docs" class="file" type="file" multiple data-preview-file-type="any">
+            <div class="content col-md-12">
+                    <div class="content-header">
+                        <h2><i class="fa fa-upload"></i> 文件上传</h2>
+                    </div>
+                    <div class="content-breadcrumb">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html"><i class="fa fa-home"></i> 首页</a> <span class="divider"></span></li>
+                            <li class="active">文件上传</li>
+                        </ul>
+                    </div>
+                    <!-- content-body -->
+                    <div class="content-body">
+                        <div class="block">
+                            <h3>图片上传<small>[格式:jsp、png、gif][单个大小:<5M]</small></h3>
+                            <div class="form-group">
+                                <input id="file-pictures" class="file" type="file" multiple data-preview-file-type="image">
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3>视频上传<small>[格式：][大小:<20M]</small></h3>
+                            <div class="form-group">
+                                <input id="file-videos" class="file" type="file" multiple data-preview-file-type="video">
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3>音频上传<small>[格式：][单个大小:<10M]</small></h3>
+                            <div class="form-group">
+                                <input id="file-audios" class="file" type="file" multiple data-preview-file-type="audio">
+                            </div>
+                        </div>
+                        <div class="block">
+                            <h3>文档上传<small>[格式：][单个大小:<5M]</small></h3>
+                            <div class="form-group">
+                                <input id="file-docs" class="file" type="file" multiple data-preview-file-type="any">
+                            </div>
+                        </div>
+
+                        <!---->
+                        <!--<div class="divider-content"><span></span></div>-->
+                        <!---->
+                        <!--<div class="divider-content"><span></span></div>-->
+                        <!---->
+                        <!--<div class="divider-content"><span></span></div>-->
+
+                    </div>
             </div>
         </div>
         <div class="col-lg-1 right-part"></div>
